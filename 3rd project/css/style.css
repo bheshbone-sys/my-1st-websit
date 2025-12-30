@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap');
+
+/* || REST */
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+img {
+    display: center;
+  max-width: 100%;
+  height: auto;
+  margin: 10px;
+
+}
+
+input,
+ button,
+ textarea {
+    font: inherit;
+}
+
+/*|| VARIABLES */
+
+:root {
+    /* FONTS */
+    --FF: 'Nunito', sans-serif;
+  --FF-Heading: 'Fugaz One', cursive;
+  --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+
+/* COLORS */
+  --BGCOLOR: orange;
+  --BGCOLOR-FADE: rgb(225, 220, 160);
+  --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
+  --BODY-BGCOLOR: #FFF;
+  --FONT-COLOR: #000;
+  --BORDER-COLOR: #333;
+  --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+  --LINK-COLOR: #000;
+  --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+  --LINK-ACTIVE: orange;
+  --HEADER-BGCOLOR: #000;
+  --HEADER-COLORO: #FFF;
+  --nav-BGCOLOR: #FFF;
+  --HERO-BGCOLOR: rgba(51, 178, 51, 0.75);
+  --HERO-COLOR: #FFF;
+
+  /* BORDERS */
+  --BORDERS: 1px solid var(--BORDER-COLOR);
+
+  
+/* || STANDARD PADDING */
+--PADDING-TB: 0.25em;
+--PADDING-SIDE: 2.5%;
+
+/* STANDING MARGIN */
+--MARGIN: clamp(1em, 2.5vh, 1.5)0;
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+.center{
+    text-align: center;
+}
+
+/* || GENERAL STYLE */
+
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--FS);
+  font-family: var(--FF);
+  background-color: var(--BGCOLOR);
+  background-image: var(--BGIMAGE);
+}
+
+
+body {
+    background-color:  var(--BODY-BGCOLOR);
+  color: var(--FONT-COLOR);
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  border-left: var(--BORDERS);
+  border-right: var(--BORDERS);
+  box-shadow: 0 0 10px var(--BORDER-COLOR);
+}
+
+h1 {
+  font-size: 2.5rem;       /* Makes the main header large */
+  color: darkblue;         /* Sets text color */
+  text-align: center;      /* Centers the header */
+}
+
+h2 {
+  font-size: 2rem;
+  color: teal;
+  margin-top: 20px;        /* Adds spacing above */
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: gray;
+  font-style: italic;      /* Makes it italic */
+}
+
+
+P {
+    line-height: 1.5
+}
+
+a:any-link {
+    color: var(--LINK-COLOR)
+}
+
+a:hover, a:focus-visible {
+    color: var(--LINK-HOVER);
+}
+
+a:active {
+    color: var(--LINK-ACTIVE)
+}
+
+/* || HEADER */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header h1 {
+    text-align: center;
+    background-color:var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLORO);
+    PADDING: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+.header nav {
+    background-color: var(---BGCOLOR);
+    border-bottom: var(--BORDERS);
+    font-weight: bold;
+    box-shadow: 0 6px 5px -5 var(--BORDER-COLOR);
+}
+
+.header_ul {
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+/* Hover effect */
+header ul li a:hover {
+  color: #0044ff;          /* highlight color */
+}
+
+
+/* || HERO */
+
+.hero {
+    position: relative;
+}
+
+.hero_h2 {
+    background-color: var(--HERO-BGCOLOR);
+    color: var(--HERO-COLOR);
+    padding: 0.25em 0.5em;
+    letter-spacing: 0.1rem;
+    text-shadow: 2px 2px 5px var(--BORDER-COLOR);
+    position:absolute;
+    top: -100px;
+    left: 20px;
+    animation: showwelcome 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes showwelcome{
+    0%{
+        top: -20px;
+        transform: skew(0deg, -5deg) scaleY(0);
+    }
+
+    80%{
+      top: 30px;
+       transform: skew(10deg, -5deg) scaleY(1.2);
+    }
+
+    100% {
+        top: 20px;
+         transform: skew(-10deg, -5deg) scaleY(1);
+    }
+}
+
+    /* FOOTER */
+
+.footer {
+    position:sticky;
+    bottom: 0;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLORO);
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+    text-align: center;
+}
+
+ /* MAIN */
+
+ .main {
+     padding: var(--PADDING-TB) var(--PADDING-SIDE);
+ }
+
+ .main_article {
+    scroll-margin-top: 6.5rem;
+    margin: var(--MARGIN);
+ }
+
+ .main_article:first-child{
+    margin-top: 1em;
+ }
+
+ .main_article:last-child{
+    min-height: calc(100vh - 20rem);
+ }
+
+ /* || ABOUT */
+
+ .about_trivia {
+    margin: var(--MARGIN)
+ }
+
+ .about_trivia-anser{
+    margin-top: 1em;
+ }
+
+ /* || CONTACT */
+
+ .contact {
+    margin: 0;
+ }
+
+ .contact_fieldset {
+    border: none;
+ }
+
+ .contact_p {
+    margin: 1em 0
+ }
+
+ .contact_label {
+    display: block;
+    font-weight: bold;
+ }
+
+ .contact_input, .contact_fieldset{
+    padding: 0.5em;
+    border-radius: 15px;
+    border-width: 2px;
+    width: 100%;
+ }
+
+ .contact_button {
+    padding: 0.5em;
+    border-radius: 15px;
+    background-color: var(--HIGHLIGHT-COLOR);
+    color: var(---HEADER-COLOR);
+ }
+
+ /* || MENU */
+table {
+  border-collapse: collapse;   /* removes gaps between cells */
+  width: auto;                 /* shrink to fit content */
+  margin: 10px 0;
+  font-size: 14px;             /* smaller text */
+  line-height: 1.2;            /* tighter vertical spacing */
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 4px 6px;            /* compact padding */
+  text-align: center;
+}
+
+thead {
+  background-color: #2c3e50;   /* dark header */
+  color: #fff;                 /* white text */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;   /* light gray for even rows */
+}
+
+tbody tr:hover {
+  background-color: #d1f2eb;   /* highlight on hover */
+}
+
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+  
+
+
